@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कृषि सेवाएँ - आधुनिक खेती का समाधान</title>
+    <style>
+        /* Reset and Base Styles */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+         :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #ff9800;
+            --text: #333;
+            --text-light: #666;
+            --background: #f9f9f9;
+            --white: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Header Styles */
+        
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+        /* Hero Section */
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        /* Services Section */
+        
+        .services {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary-light);
+            color: white;
+            font-size: 2.5rem;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        /* About Section */
+        
+        .about {
+            padding: 80px 0;
+            background-color: var(--background);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        /* Contact Section */
+        
+        .contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            background-color: var(--primary-light);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        /* Footer */
+        
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin: 20px 0;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">🌱</div>
+                <div class="logo-text">कृषि सेवाएँ</div>
+            </div>
+            <nav>
+
+            </nav>
+            <a href="#contact" class="cta-button">अभी संपर्क करें</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>आधुनिक खेती के लिए संपूर्ण समाधान</h1>
+            <p>हम किसानों को उन्नत तकनीक, गुणवत्तापूर्ण बीज, उर्वरक और विशेषज्ञ सलाह प्रदान करते हैं ताकि उनकी उपज और आय में वृद्धि हो सके।</p>
+            <a href="#services" class="cta-button">हमारी सेवाएँ देखें</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>हमारी सेवाएँ</h2>
+                <p>हम किसानों को विभिन्न प्रकार की सेवाएँ प्रदान करते हैं जो उनकी खेती को और अधिक उत्पादक और लाभदायक बनाती हैं।</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌾</div>
+                    <div class="service-content">
+                        <h3>गुणवत्तापूर्ण बीज</h3>
+                        <p>उच्च उपज देने वाले, रोग प्रतिरोधी और जलवायु के अनुकूल बीजों की आपूर्ति। सभी प्रमुख फसलों के लिए प्रमाणित बीज उपलब्ध।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <div class="service-content">
+                        <h3>सिंचाई समाधान</h3>
+                        <p>ड्रिप इरिगेशन, स्प्रिंकलर सिस्टम और अन्य आधुनिक सिंचाई तकनीकों की स्थापना और रखरखाव सेवाएँ।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <div class="service-content">
+                        <h3>मृदा परीक्षण</h3>
+                        <p>वैज्ञानिक विधियों से मिट्टी की गुणवत्ता का परीक्षण और उसके अनुसार उर्वरकों की सिफारिश।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚜</div>
+                    <div class="service-content">
+                        <h3>आधुनिक उपकरण</h3>
+                        <p>ट्रैक्टर, हार्वेस्टर और अन्य आधुनिक कृषि उपकरणों की किराया और बिक्री सेवाएँ।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <div class="service-content">
+                        <h3>बाजार संपर्क</h3>
+                        <p>किसानों को उनकी उपज के लिए उचित मूल्य दिलाने में सहायता और बाजार से सीधा संपर्क स्थापित करना।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍🌾</div>
+                    <div class="service-content">
+                        <h3>विशेषज्ञ सलाह</h3>
+                        <p>कृषि विशेषज्ञों द्वारा फसल चक्र, कीट नियंत्रण और आधुनिक खेती तकनीकों पर निःशुल्क परामर्श।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="किसानों के साथ काम करते हुए">
+                </div>
+                <div class="about-text">
+                    <h2>हमारे बारे में</h2>
+                    <p>कृषि सेवाएँ एक विश्वसनीय संगठन है जो पिछले 15 वर्षों से किसानों की सेवा कर रहा है। हमारा उद्देश्य भारतीय किसानों को आधुनिक तकनीक और वैज्ञानिक ज्ञान से लैस करना है।</p>
+                    <p>हमारी टीम में कृषि वैज्ञानिक, अनुभवी किसान और तकनीकी विशेषज्ञ शामिल हैं जो मिलकर किसानों की समस्याओं का समाधान प्रदान करते हैं।</p>
+                    <p>हमारे पास 10,000 से अधिक संतुष्ट किसान ग्राहक हैं और हमने 50,000 एकड़ से अधिक भूमि पर आधुनिक खेती तकनीकों को लागू किया है।</p>
+                    <a href="#contact" class="cta-button">और जानें</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+
+
+
+
+</body>
+
+</html>

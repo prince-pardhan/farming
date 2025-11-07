@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बाल्टू की खेती की कहानी</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .story-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+            border: 10px solid #ffcc80;
+            position: relative;
+        }
+        
+        .story-title {
+            text-align: center;
+            color: #ff6f00;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #ffcc80;
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 15px;
+            border: 5px dashed #ffb74d;
+        }
+        
+        .story-subtitle {
+            text-align: center;
+            color: #4caf50;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .story-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .story-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            border: 5px solid #81c784;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .story-content {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            text-align: justify;
+        }
+        
+        .story-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #f1f8e9;
+            border-left: 8px solid #8bc34a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: #388e3c;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .character {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            border: 3px solid #a5d6a7;
+        }
+        
+        .character-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 4px solid #4caf50;
+            background-color: #c8e6c9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        
+        .character-info {
+            flex: 1;
+        }
+        
+        .character-name {
+            font-weight: bold;
+            color: #2e7d32;
+            font-size: 1.5rem;
+        }
+        
+        .character-desc {
+            color: #555;
+        }
+        
+        .moral {
+            background-color: #fffde7;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 5px solid #ffd54f;
+            text-align: center;
+        }
+        
+        .moral-title {
+            color: #ff8f00;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .moral-content {
+            font-size: 1.4rem;
+            color: #5d4037;
+            font-weight: bold;
+        }
+        
+        .interactive-section {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border: 5px solid #64b5f6;
+        }
+        
+        .interactive-title {
+            color: #1565c0;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+        
+        .activity-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 0 #2e7d32;
+        }
+        
+        .activity-btn:hover {
+            background-color: #388e3c;
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #2e7d32;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #757575;
+            font-size: 1rem;
+            border-top: 2px dashed #bdbdbd;
+        }
+        /* नया गीत सेक्शन स्टाइल */
+        
+        .song-section {
+            background: linear-gradient(135deg, #ffecb3 0%, #ffd54f 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 5px solid #ffb300;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .song-title {
+            color: #e65100;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 0 #ffcc80;
+        }
+        
+        .song-content {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #5d4037;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .song-chorus {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #bf360c;
+            border: 2px dashed #ff9800;
+        }
+        
+        .music-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .music-btn {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 3px 0 #e65100;
+        }
+        
+        .music-btn:hover {
+            background-color: #f57c00;
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #e65100;
+        }
+        
+        .dancing-animals {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            font-size: 3rem;
+        }
+        
+        .animal {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .animal:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .animal:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .animal:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        
+        @media (max-width: 768px) {
+            .story-title {
+                font-size: 2rem;
+            }
+            .story-content {
+                font-size: 1.1rem;
+            }
+            .character {
+                flex-direction: column;
+                text-align: center;
+            }
+            .character-img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .music-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            .dancing-animals {
+                font-size: 2rem;
+            }
+        }
+        /* Animation for story elements */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .story-section,
+        .character,
+        .moral,
+        .interactive-section,
+        .song-section {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="story-container">
+        <h1 class="story-title">बाल्टू की खेती की कहानी</h1>
+        <p class="story-subtitle">एक छोटे बालक की मेहनत और सफलता की प्रेरणादायक कहानी</p>
+
+        <div class="story-image">
+            <!-- Placeholder for story image -->
+            <div style="width:100%; height:300px; background:linear-gradient(to right, #c5e1a5, #8bc34a); border-radius:15px; display:flex; align-items:center; justify-content:center; color:#33691e; font-size:24px; font-weight:bold;">
+                बाल्टू का खेत
+            </div>
+        </div>
+
+        <div class="story-content">
+            <div class="story-section">
+                <h2 class="section-title">🌱 कहानी की शुरुआत</h2>
+                <p>एक छोटे से गाँव में बाल्टू नाम का एक 10 साल का बच्चा रहता था। बाल्टू बहुत ही जिज्ञासु और मेहनती बालक था। उसके पिता एक किसान थे और खेत में काम करते थे।</p>
+                <p>एक दिन बाल्टू ने अपने पिता से कहा, "पापा, मैं भी अपना छोटा सा खेत बनाना चाहता हूँ। क्या आप मेरी मदद करेंगे?"</p>
+            </div>
+
+            <div class="song-section">
+                <h2 class="song-title">🎵 खेती का मजेदार गीत 🎵</h2>
+                <div class="dancing-animals">
+                    <div class="animal">🌻</div>
+                    <div class="animal">🐝</div>
+                    <div class="animal">🐞</div>
+                    <div class="animal">🦋</div>
+                </div>
+                <div class="song-content">
+                    <p>आओ बच्चों खेल-खेल में,<br> सीखें खेती की राह में।<br> बीज बोएं, पानी दें,<br> हरा-भरा बगीचा लगाएं।</p>
+
+                    <div class="song-chorus">
+                        हरे-भरे खेतों में,<br> फल-फूल सबके मन में।<br> मेहनत का फल मिलेगा,<br> सबका दिल खुश हो जाएगा।
+                    </div>
+
+                    <p>सूरज निकला, चिड़िया चहकी,<br> बाल्टू खेत में आया।<br> कुदाल लेकर मिट्टी खोदी,<br> नन्हें बीजों को बोया।</p>
+
+                    <p>पानी दिया, देखभाल की,<br> पौधे बढ़े दिन-रात।<br> लाल टमाटर, हरी मिर्च,<br> देखकर हुआ विश्वास।</p>
+
+                    <div class="song-chorus">
+                        हरे-भरे खेतों में,<br> फल-फूल सबके मन में।<br> मेहनत का फल मिलेगा,<br> सबका दिल खुश हो जाएगा।
+                    </div>
+                </div>
+
+                <div class="music-controls">
+                    <button class="music-btn" onclick="playSong()">▶️ गीत सुनें</button>
+                    <button class="music-btn" onclick="pauseSong()">⏸️ रोकें</button>
+                    <button class="music-btn" onclick="learnSong()">🎤 गीत सीखें</button>
+                </div>
+            </div>
+
+            <div class="story-section">
+                <h2 class="section-title">👨‍🌾 बाल्टू का सपना</h2>
+                <p>बाल्टू के पिता ने उसे घर के पीछे एक छोटा सा प्लॉट दिया। बाल्टू बहुत खुश हुआ। उसने सबसे पहले अपने दोस्तों को बुलाया और सबने मिलकर खेत की सफाई की।</p>
+                <p>बाल्टू के दादाजी ने उसे बीज बोना सिखाया। उसने टमाटर, मिर्च, धनिया और फूलों के बीज बोए। रोज सुबह वह पौधों को पानी देता और उनकी देखभाल करता।</p>
+            </div>
+
+            <div class="character">
+                <div class="character-img">👦</div>
+                <div class="character-info">
+                    <div class="character-name">बाल्टू</div>
+                    <div class="character-desc">10 साल का मेहनती बच्चा जिसने अपने छोटे से खेत से बड़ी सीख हासिल की।</div>
+                </div>
+            </div>
+
+            <div class="story-section">
+                <h2 class="section-title">💪 मुश्किलें और हल</h2>
+                <p>कुछ दिनों बाद बाल्टू ने देखा कि उसके कुछ पौधे मुरझा रहे हैं। वह बहुत परेशान हुआ। उसने अपने दादाजी से इस बारे में पूछा।</p>
+                <p>दादाजी ने बताया, "बेटा, पौधों को सिर्फ पानी ही नहीं, अच्छी मिट्टी और धूप भी चाहिए। तुम प्राकृतिक खाद का इस्तेमाल करो।"</p>
+                <p>बाल्टू ने किचन के कचरे से कंपोस्ट खाद बनाई और पौधों को दिया। कुछ हफ्तों में पौधे फिर से हरे-भरे हो गए!</p>
+            </div>
+
+            <div class="story-section">
+                <h2 class="section-title">🌻 सफलता की कहानी</h2>
+                <p>कुछ महीनों बाद बाल्टू के खेत में लाल-लाल टमाटर, हरी मिर्च और सुंदर फूल खिल उठे। उसने अपनी पहली फसल काटी और सबको बाँटी।</p>
+                <p>पूरे गाँव में बाल्टू की तारीफ होने लगी। उसके दोस्तों ने भी अपने-अपने छोटे-छोटे खेत बनाने शुरू कर दिए।</p>
+            </div>
+
+            <div class="moral">
+                <h3 class="moral-title">कहानी की सीख</h3>
+                <p class="moral-content">"छोटी शुरुआत से बड़ी सफलता मिल सकती है। मेहनत, लगन और सीखने की इच्छा हर मुश्किल को आसान बना सकती है।"</p>
+            </div>
+
+            <div class="interactive-section">
+                <h3 class="interactive-title">बाल्टू के साथ खेती सीखें!</h3>
+                <p>क्या आप भी बाल्टू की तरह खेती सीखना चाहते हैं?</p>
+                <button class="activity-btn" onclick="showTip()">खेती का टिप पाएं</button>
+                <button class="activity-btn" onclick="startGame()">खेती गेम खेलें</button>
+                <div id="tip-box" style="margin-top:15px; padding:10px; background:#c8e6c9; border-radius:10px; display:none;"></div>
+            </div>
+
+            <div class="character">
+                <div class="character-img">👨‍🌾</div>
+                <div class="character-info">
+                    <div class="character-name">दादाजी</div>
+                    <div class="character-desc">बाल्टू के गुरु जिन्होंने उसे प्रकृति के रहस्य सिखाए।</div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>© 2023 बाल शिक्षा - प्रेरणादायक कहानियाँ | सभी बच्चों के लिए शैक्षिक सामग्री</p>
+                <p style="font-weight: 900;">Farming india me loupt ho ti ja r hi h </p>
+                <h4>Rahul swami</h4>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function showTip() {
+            const tips = [
+                "टिप: पौधों को रोज सुबह या शाम को पानी देना सबसे अच्छा होता है!",
+                "टिप: पौधों के आसपास खरपतवार न उगने दें!",
+                "टिप: प्राकृतिक खाद पौधों के लिए बहुत अच्छी होती है!",
+                "टिप: धूप में उगने वाले पौधों को ज्यादा धूप की जरूरत होती है!",
+                "टिप: पौधों को जरूरत से ज्यादा पानी न दें!"
+            ];
+            const randomTip = tips[Math.floor(Math.random() * tips.length)];
+            document.getElementById('tip-box').innerHTML = `<strong>${randomTip}</strong>`;
+            document.getElementById('tip-box').style.display = 'block';
+        }
+
+        function startGame() {
+            alert('खेती गेम जल्द ही आ रहा है! बाल्टू के साथ खेती सीखने के लिए तैयार रहें!');
+        }
+
+        // नए गीत के लिए फंक्शन
+        function playSong() {
+            alert('🎵 गीत चल रहा है! आओ बच्चों खेल-खेल में, सीखें खेती की राह में... 🎵');
+        }
+
+        function pauseSong() {
+            alert('गीत रोक दिया गया है।');
+        }
+
+        function learnSong() {
+            alert('गीत सीखने के लिए तैयार हो जाओ! गीत के बोल ऊपर दिए गए हैं। आओ मिलकर गाएं!');
+        }
+    </script>
+</body>
+
+</html>

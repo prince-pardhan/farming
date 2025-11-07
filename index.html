@@ -7,6 +7,300 @@
     <title>GreenFarm - Organic Farming</title>
     <link rel="stylesheet" href="./index.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Navbar styles */
+        
+        .navbar {
+            background-color: #2e7d32;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #c8e6c9;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        /* Hero section */
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 2rem;
+            background-color: #f1f8e9;
+            min-height: 80vh;
+        }
+        
+        .hero-content {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2e7d32;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .cta-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #388e3c;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        /* About section */
+        
+        .about {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2e7d32;
+        }
+        
+        .about-content p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .feature i {
+            color: #4caf50;
+            font-size: 1.5rem;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        /* Products section */
+        
+        .products {
+            padding: 4rem 0;
+            background-color: #f1f8e9;
+        }
+        
+        .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2e7d32;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-card h3 {
+            padding: 1rem 1rem 0.5rem;
+            color: #2e7d32;
+        }
+        
+        .product-card p {
+            padding: 0 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            display: block;
+            padding: 0 1rem 1rem;
+            font-weight: bold;
+            color: #4caf50;
+        }
+        /* Footer */
+        
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        /* Mobile responsiveness */
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2e7d32;
+                padding: 1rem 0;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            .hero-content {
+                margin-bottom: 2rem;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -14,19 +308,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                </i> GreenFarm india
+                <i class="fas fa-leaf"></i> GreenFarm India
             </div>
             <ul class="nav-menu">
-                <!-- <li><a href="#home">Home</a></li> -->
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#products">image</a> </li>
+                <li><a href="#products">Products</a></li>
                 <li><a href="./sarvs.html">Services</a></li>
-                <li>
-                    <a href="./fam.html">Farming</a>
-                </li>
+                <li><a href="./fam.html">Farming</a></li>
             </ul>
-            <div class="hamburger">
-                <span>rahul</span>
+            <div class="hamburger" id="hamburger">
+                <span></span>
                 <span></span>
                 <span></span>
             </div>
@@ -41,7 +333,7 @@
             <button class="cta-button">Explore Products</button>
         </div>
         <div class="hero-image">
-            <img src="https://media.istockphoto.com/id/1220114151/vector/the-way-of-life-of-farmers-in-thailand.jpg?s=612x612&w=0&k=20&c=yPxPfY2MW_78pfAVuGExZw70JcqEkmviaa8LxbSoTvg=   " alt="Green Farm Landscape">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Green Farm Landscape">
         </div>
     </section>
 
@@ -68,7 +360,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://media.istockphoto.com/id/1029301814/photo/farmer-ploughing-field.jpg?s=612x612&w=0&k=20&c=DUfDbLJ_gpkdPJZu3Nu3_Y_wdB64MP1lAoNtus1ewXQ=" alt="Farm Workers">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Farm Workers">
                 </div>
             </div>
         </div>
@@ -77,26 +369,62 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
+            <h2>Our Products</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVCFGJZ2QjlBiCqwka_hg97IjipEr3adOxrA&s" alt="Dairy Products">
-                    <h3>safe cow </h3>
-                    <p>Safe cou safe life </p>
-                    <span class="price">jai shree krshana</span>
+                    <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Vegetables">
+                    <h3>Fresh Vegetables</h3>
+                    <p>Organically grown vegetables harvested at peak freshness</p>
+                    <!-- <span class="price">From ₹120/kg</span> -->
                 </div>
 
-                <div class="product-card">
-                    <img src="https://media.istockphoto.com/id/1029301814/photo/farmer-ploughing-field.jpg?s=612x612&w=0&k=20&c=DUfDbLJ_gpkdPJZu3Nu3_Y_wdB64MP1lAoNtus1ewXQ=">
-                    <h3>farmar </h3>
-                    <p>morming farmar image in india</p>
-                    <span class="price"></span>
-                </div>
+                <!-- <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1566489564591-b0ea803a5c0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dairy Products">
+                    <h3>Dairy Products</h3>
+                    <p>Pure milk, cheese, and yogurt from grass-fed cows</p>
+                    <span class="price">From ₹60/L</span>
+                </div> -->
 
                 <div class="product-card">
-                    <img src="https://www.shutterstock.com/image-photo/village-scenerysiem-reap-cambodia-260nw-479127796.jpg" alt="Dairy Products">
-                    <h3>villag</h3>
-                    <p>Village image in morming </p>
-                    <span class="price"></span>
+                    <img src="https://images.unsplash.com/photo-1574856344991-aaa31b6f4ce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Organic Fruits">
+                    <h3>Organic Fruits</h3>
+                    <p>Seasonal fruits grown without pesticides or chemicals</p>
+                    <!-- <span class="price">From ₹150/kg</span> -->
                 </div>
             </div>
         </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>GreenFarm India</h3>
+            <p>Connecting you with nature's finest produce</p>
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <p>&copy; 2023 GreenFarm India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

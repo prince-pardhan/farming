@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>भारत की फसलों का वर्णन (HTML + CSS)</title>
+    <style>
+         :root {
+            --bg: #f7fafc;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --accent: #0ea5a4;
+            --accent2: #06b6d4;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            font-family: 'Noto Sans Devanagari', system-ui, Arial, sans-serif;
+            background: var(--bg);
+            color: #0f172a;
+            margin: 0;
+            padding: 24px
+        }
+        
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 24px
+        }
+        
+        p.lead {
+            margin: 0;
+            color: var(--muted)
+        }
+        
+        .search-wrap {
+            margin-top: 12px
+        }
+        
+        input[type=search] {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #e6edf0
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 18px
+        }
+        
+        .card {
+            background: var(--card);
+            padding: 14px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06)
+        }
+        
+        .cat {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            color: white;
+            font-weight: 600;
+            font-size: 12px
+        }
+        
+        h3 {
+            margin: 8px 0 6px 0
+        }
+        
+        p.desc {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.45
+        }
+        
+        footer {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 13px
+        }
+        
+        @media (max-width:420px) {
+            h1 {
+                font-size: 20px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <div class="search-wrap" style="display: flex; align-items: center; justify-content: center;">
+                <h1>भारत की फसलों का संक्षिप्त वर्णन</h1>
+                <input id="search" type="search" placeholder="sarch " />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid" id="grid">
+
+            <!-- Cereals -->
+            <div class="card" data-keywords="अनाज,धान,चावल,cereals,rice">
+                <span class="cat">अनाज</span>
+                <h3>चावल (धान)</h3>
+                <p class="desc">भारत की सबसे महत्वपूर्ण फसल; गर्म और नम जलवायु में उगाई जाती है। यह बड़े हिस्से में आहार का मुख्य स्रोत है।</p>
+            </div>
+
+            <div class="card" data-keywords="अनाज,गेहूँ,wheat">
+                <span class="cat">अनाज</span>
+                <h3>गेहूँ</h3>
+                <p class="desc">ठंडे और शुष्क इलाकों में उगाई जाती है; रोटी, आटा और कई उत्पादों के लिए प्रमुख। उत्तर भारत में प्रमुख फसल।</p>
+            </div>
+
+            <div class="card" data-keywords="अनाज,मक्का,maize">
+                <span class="cat">अनाज</span>
+                <h3>मक्का (भुट्टा)</h3>
+                <p class="desc">विविध जलवायु में उगता है; चारा, आहार और उद्योग में उपयोगी।</p>
+            </div>
+
+            <div class="card" data-keywords="अनाज,ज्वार,sorghum,jowar">
+                <span class="cat">अनाज</span>
+                <h3>ज्वार (सॉर्गम)</h3>
+                <p class="desc">सूखा-प्रतिरोधी दलहन अनाज; बीकानेर, महाराष्ट्र और कर्नाटक जैसे क्षेत्रों में उगता है।</p>
+            </div>
+
+            <div class="card" data-keywords="अनाज,बाजरा,millet,bajra">
+                <span class="cat">अनाज</span>
+                <h3>बाजरा</h3>
+                <p class="desc">शुष्क क्षेत्रों के लिए उपयुक्त; उत्तर-पश्चिम और मध्य भारत में प्रमुख।</p>
+            </div>
+
+            <div class="card" data-keywords="अनाज,रागी,ragi">
+                <span class="cat">अनाज</span>
+                <h3>रागी (नाचनी)</h3>
+                <p class="desc">दक्षिण और पूर्वी भारत में उगने वाला पोषक तत्वों से भरपूर मिलेट।</p>
+            </div>
+
+            <!-- Pulses -->
+            <div class="card" data-keywords="दलहन,मसूर,dal,masoor">
+                <span class="cat">दलहन</span>
+                <h3>मसूर</h3>
+                <p class="desc">प्रोटीन-समृद्ध दाल; कई भारतीय पकवानों में प्रयोग होती है।</p>
+            </div>
+
+            <div class="card" data-keywords="दलहन,अरहर,तूर,tur">
+                <span class="cat">दलहन</span>
+                <h3>अरहर/तूर</h3>
+                <p class="desc">भारत की प्रमुख दालों में से एक; मुख्य रूप से मध्य और दक्षिण भारत में उगती है।</p>
+            </div>
+
+            <div class="card" data-keywords="दलहन,चना,chana,gram">
+                <span class="cat">दलहन</span>
+                <h3>चना</h3>
+                <p class="desc">सबल फसल; सेंकने योग्य और दाल दोनों रूपों में इस्तेमाल होती है।</p>
+            </div>
+
+            <div class="card" data-keywords="दलहन,मूंग,moong">
+                <span class="cat">दलहन</span>
+                <h3>मूंग</h3>
+                <p class="desc">हल्की और पचने में आसान दाल; खरी और गीली दोनों फसलें।</p>
+            </div>
+
+            <div class="card" data-keywords="दलहन,उड़द,urad">
+                <span class="cat">दलहन</span>
+                <h3>उड़द</h3>
+                <p class="desc">दोसों और दक्षिण भारत में लोकप्रिय; इडली-दोसा के लिए उपयोगी।</p>
+            </div>
+
+            <!-- Oilseeds -->
+            <div class="card" data-keywords="तिलहन,सॉयाबीन,soybean">
+                <span class="cat">तिलहन</span>
+                <h3>सोयाबीन</h3>
+                <p class="desc">प्रोटीन और तेल का महत्वपूर्ण स्रोत; मझोले और पश्चिमी हिस्सों में उगता है।</p>
+            </div>
+
+            <div class="card" data-keywords="तिलहन,सरसों,mustard">
+                <span class="cat">तिलहन</span>
+                <h3>सरसों (राय)</h3>
+                <p class="desc">तेल बनाने के लिए प्रमुख; उत्तर और पूर्वोत्तर भारत में उगाई जाती है।</p>
+            </div>
+
+            <div class="card" data-keywords="तिलहन,मूंगफली,groundnut,बादाम">
+                <span class="cat">तिलहन</span>
+                <h3>मूंगफली (जलजीरा)</h3>
+                <p class="desc">तेल और स्नैक्स के लिए; गुजरात, आंध्र और महाराष्ट्र में प्रमुख।</p>
+            </div>
+
+            <div class="card" data-keywords="तिलहन,तिल,sesame,til">
+                <span class="cat">तिलहन</span>
+                <h3>तिल (सरगी)</h3>
+                <p class="desc">छोटे बीज, तेल और मिठाईयों में उपयोगी; मौसम के अनुरूप उगता है।</p>
+            </div>
+
+            <div class="card" data-keywords="तिलहन,सूरजमुखी,sunflower">
+                <span class="cat">तिलहन</span>
+                <h3>सूरजमुखी</h3>
+                <p class="desc">तेल-बीज की फसल; मध्य भारत में लोकप्रिय।</p>
+            </div>
+
+            <!-- Cash & Plantation crops -->
+            <div class="card" data-keywords="कॅश,चीनी,गन्ना,sugarcane">
+                <span class="cat">नकदी फसल</span>
+                <h3>गन्ना</h3>
+                <p class="desc">चीनी का प्रमुख स्रोत; उष्णकटिबंधीय और उपोष्णकटिबंधीय क्षेत्रों में उगता है।</p>
+            </div>
+
+            <div class="card" data-keywords="कॉटन,कपास,cotton">
+                <span class="cat">कॅश फसल</span>
+                <h3>कपास</h3>
+                <p class="desc">सूती उद्योग की आधारभूत फसल; महाराष्ट्र, गुजरात, तामिलनाडु आदि में पसरी हुई।</p>
+            </div>
+
+            <div class="card" data-keywords="जूट,jute,कॅश">
+                <span class="cat">कॅश फसल</span>
+                <h3>जूट</h3>
+                <p class="desc">बाँस और टेट्रा पैक विकल्प; पश्चिम बंगाल और असम में उगता है।</p>
+            </div>
+
+            <div class="card" data-keywords="चाय,tea,plantation">
+                <span class="cat">प्लांटेशन</span>
+                <h3>चाय</h3>
+                <p class="desc">हिमालय के तराई और पूर्वोत्तर के मैदानों में प्रमुख; भारत का एक महत्वपूर्ण निर्यात उत्पाद।</p>
+            </div>
+
+            <div class="card" data-keywords="कॉफ़ी,coffee,plantation">
+                <span class="cat">प्लांटेशन</span>
+                <h3>कॉफ़ी</h3>
+                <p class="desc">दक्षिण भारत के पर्वतीय क्षेत्रों में उगती है; अरबीका और रोबस्टा प्रकार प्रमुख।</p>
+            </div>
+
+            <div class="card" data-keywords="नारियल,coconut,plantation">
+                <span class="cat">प्लांटेशन</span>
+                <h3>नारियल</h3>
+                <p class="desc">तेल, पानी और खाने के लिए उपयोग; तटीय राज्यों में प्रमुख।</p>
+            </div>
+
+            <div class="card" data-keywords="rubber,रबर">
+                <span class="cat">प्लांटेशन</span>
+                <h3>रबड़</h3>
+                <p class="desc">केरल और अन्य दक्षिणी हिस्सों में उगता है; उद्योग के लिए प्राकृतिक रबड़ स्रोत।</p>
+            </div>
+
+            <!-- Spices -->
+            <div class="card" data-keywords="मसाले,हल्दी,turmeric">
+                <span class="cat">मसाले</span>
+                <h3>हल्दी</h3>
+                <p class="desc">रंग और औषधीय गुणों के लिए प्रसिद्ध; तमिलनाडु और केरल में उगती है।</p>
+            </div>
+
+            <div class="card" data-keywords="मसाले,मिर्च,लालमिर्च,chilli">
+                <span class="cat">मसाले</span>
+                <h3>लाल मिर्च / मिर्च</h3>
+                <p class="desc">खान-पान में प्रमुख मसाला; महाराष्ट्र, आंध्र, गुजरात जैसे राज्यों में उपज।</p>
+            </div>
+
+            <div class="card" data-keywords="मसाले,अदरक,ginger">
+                <span class="cat">मसाले</span>
+                <h3>अदरक (जिंजर)</h3>
+                <p class="desc">खाद्य और दवाइयों में उपयोगी; पश्चिम बंगाल, उत्तर-पूर्व और कर्नाटक में उगता है।</p>
+            </div>
+
+            <div class="card" data-keywords="मसाले,इलायची,cardamom">
+                <span class="cat">मसाले</span>
+                <h3>इलायची</h3>
+                <p class="desc">खाने-पीने और मिठाइयों में खुशबू के लिए; केरल और पश्चिमी घाट में उगती है।</p>
+            </div>
+
+            <div class="card" data-keywords="मसाले,कालीमरिच,blackpepper,कालीमिर्च">
+                <span class="cat">मसाले</span>
+                <h3>काली मिर्च</h3>
+                <p class="desc">काली मिर्च (कालीमिर्च) उच्च-मूल्य वाली मसालों में से एक; दक्षिण भारत में उगती है।</p>
+            </div>
+
+            <!-- Fruits & Vegetables -->
+            <div class="card" data-keywords="फल,आम,mango">
+                <span class="cat">फल</span>
+                <h3>आम</h3>
+                <p class="desc">भारत का राष्ट्रीय फल; कई किस्में और बड़े पैमाने पर सेटोर में आपूर्ति।</p>
+            </div>
+
+            <div class="card" data-keywords="फल,केला,banana">
+                <span class="cat">फल</span>
+                <h3>केला</h3>
+                <p class="desc">ऊर्जा देने वाला फल; उष्णकटिबंधीय और उपोष्णकटिबंधीय इलाकों में।</p>
+            </div>
+
+            <div class="card" data-keywords="फल,संतरा,orange,citrus">
+                <span class="cat">फल</span>
+                <h3>संतरा/साइट्रस</h3>
+                <p class="desc">विटामिन-C स्रोत; महाराष्ट्र, हरियाणा और कर्नाटक में उपज।</p>
+            </div>
+
+            <div class="card" data-keywords="सब्जी,आलू,potato">
+                <span class="cat">सब्जी</span>
+                <h3>आलू</h3>
+                <p class="desc">रूट-वेज; पूरे भारत में उगाई जाती है और आहार का महत्वपूर्ण भाग है।</p>
+            </div>
+
+            <div class="card" data-keywords="सब्जी,प्याज,onion">
+                <span class="cat">सब्जी</span>
+                <h3>प्याज</h3>
+                <p class="desc">खाना पकाने का आवश्यक भाग; महत्त्वपूर्ण व्यापारिक फसल भी है।</p>
+            </div>
+
+            <div class="card" data-keywords="सब्जी,टमाटर,tomato">
+                <span class="cat">सब्जी</span>
+                <h3>टमाटर</h3>
+                <p class="desc">अनिवार्य सब्जी; सॉस और अचार के उद्योग में भी उपयोग।</p>
+            </div>
+
+            <div class="card" data-keywords="फल,अमरूद,guava">
+                <span class="cat">फल</span>
+                <h3>अमरूद</h3>
+                <p class="desc">घरेलू बागवानी में लोकप्रिय; विटामिन-सी का अच्छा स्रोत।</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        नोट: यह सूची संक्षिप्त परिचय देती है। भारत में स्थानीय विविधता और उप-प्रजातियाँ बहुत हैं — आप चाहें तो मैं हर फसल के लिए विस्तृत जानकारी (खेती की विधि, मौसम, प्रमुख राज्य) भी जोड़ दूँ।
+    </footer>
+
+    <script>
+        const input = document.getElementById('search');
+        const cards = Array.from(document.querySelectorAll('.card'));
+        input.addEventListener('input', () => {
+            const q = input.value.trim().toLowerCase();
+            cards.forEach(c => {
+                const keys = (c.dataset.keywords || '') + ' ' + c.querySelector('h3').innerText;
+                if (!q || keys.toLowerCase().includes(q)) c.style.display = 'block';
+                else c.style.display = 'none';
+            })
+        })
+    </script>
+</body>
+
+</html>
